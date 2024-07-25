@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ageless Connections-Registration</title>
+  <style>
+    body{
+      background-image: url(https://img.freepik.com/premium-photo/help-care-asian-senior-woman-use-walker-while-walking-park_39768-941.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+    }
+    form{
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+
+
+
+
+.container{
+display: flex;
+flex-direction: column;
+width: 25vw;
+}
+h1, p{
+text-align: center;
+}
+
+
+
+
+input {
+margin: 0.25em 0em 1em 0em;
+outline: none;
+padding: 0.5em;
+border: none;
+background-color: rgb(225, 225, 225);
+border-radius: 0.25em;
+color: black;
+}
+
+
+
+
+button {
+padding: 0.75em;
+border: none;
+outline: none;
+background-color: rgb(68, 18, 232);
+color: white;
+border-radius: 0.25em;
+}
+button:hover {
+cursor: pointer;
+background-color: rgb(41, 4, 164);
+}
+  </style>
+</head>
+<body>
+  <form action="reg_successful.html" onsubmit="return validateForm()">
+    <div class="container">
+      <h1>Register</h1>
+      <p>Kindly fill in this form to register.</p>
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Enter username" name="username" id="username" required />
+
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" id="email" required />
+
+
+      <label for="phone"><b>Phone number</b></label>
+      <input type="text" placeholder="Enter phone number" name="phone" id="phone" required />
+
+
+      <label for="age"><b>Age</b></label>
+      <input type="number" placeholder="Enter age" name="age" id="age" required />
+
+
+      <label for="pwd"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="pwd" id="pwd" required />
+
+
+      <label for="pwd_repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="pwd_repeat" id="pwd_repeat" required />
+
+
+      <button type="submit">Register</button>
+    </div>
+    <div>
+      <p>Already have an account? <a href="login.html">Log in</a>.</p>
+    </div>
+  </form>
+
+
+  <script>
+    function validateForm() {
+      // Validate email
+      let emailInput = document.getElementById('email');
+      let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+     
+      if (!emailPattern.test(emailInput.value)) {
+        alert("Please enter a valid email address.");
+        return false;
+      }
+
+
+      // Validate phone number
+      let phoneInput = document.getElementById('phone');
+      let phoneNumberPattern = /^[0-9]{10}$/;
+     
+      if (isNaN(phoneInput.value) || !phoneNumberPattern.test(phoneInput.value)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return false;
+      }
+
+
+      // Validate age
+      let ageInput = document.getElementById('age');
+     
+      if (isNaN(ageInput.value) || ageInput.value <= 0) {
+        alert("Please enter a valid age.");
+        return false;
+      }
+
+
+      if (ageInput.value <= 55) {
+        alert("You must be older than 55 to register.");
+        return false;
+      }
+
+
+      // Validate password and repeat password
+      let passwordInput = document.getElementById('pwd');
+      let repeatPasswordInput = document.getElementById('pwd_repeat');
+
+
+      if (passwordInput.value.length < 8) {
+        alert("Password must be at least 8 characters long.");
+        return false;
+      }
+
+
+      if (passwordInput.value !== repeatPasswordInput.value) {
+        alert("Passwords do not match.");
+        return false;
+      }
+
+
+      return true; // Submit the form if all validations pass
+    }
+  </script>
+</body>
+</html>
+
+

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      
+      
+  @keyframes fade-in {
+    from {
+      margin-top: -100%;
+      opacity: 0;
+    }
+    to {
+      margin-top: 0%;
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .image-container img {
+    
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fade-in 1s ease-in-out;
+  }
+
+  .text-container {
+    font-size: 25px;
+    animation: slide-up 3s ease-in-out;
+  }
+
+  .end,
+  .end p,
+  .end h3,
+  .end hr,
+  .fa {
+    animation: fade-in 1s ease-in-out;
+  }
+
+
+       
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .wow span{
+       
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #3B5998;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+            padding: 14px 16px;
+            display: inline-block;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+            background-color: red;
+        }
+        
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+            
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 50px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px;
+        }
+
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .fa-google {
+            background: #dd4b39;
+            color: white;
+        }
+
+        .fa-linkedin {
+            background: #007bb5;
+            color: white;
+        }
+
+        .fa-youtube {
+            background: #bb0000;
+            color: white;
+        }
+
+        .fa-instagram {
+            background: #125688;
+            color: white;
+        }
+
+        h1 {
+            font-size: 60px;
+            font-weight: 600;
+            font-family: 'Times New Roman', Times, serif;
+            background-image: linear-gradient(to right, white, blanchedalmond);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            margin: 0;
+            padding-top: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        
+
+        .image-container img {
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            
+            
+            
+        }
+
+        .end {         
+            text-align: center;
+            padding: 20px;
+            background-color: #3B5998;
+            color: white;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .end hr {
+            border: 1px solid white;
+            margin: 20px;
+        }
+
+        .end h3 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .end p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+  <span class="wow">
+    <div class="navbar">
+      <a href="index.html">Virtual Chatroom</a>
+      <a href="health.html">Health and Wellness</a>
+      <a href="hospital.html">Hospital Care</a>
+      <a href="aboutus.html">About Us</a>
+      <div class="dropdown">
+          <button class="dropbtn" onclick="myFunction()">For Seniors
+            <i class="fa fa-caret-down"></i>
+          </button>
+
+          <div class="dropdown-content" id="myDropdown">
+              <a href="recreation.html">Recreational Activities</a>
+              <a href="legal.html">Legal Advice</a>
+              <a href="techbuddy.html">Tech Buddy Program</a>
+          </div>
+      </div> 
+      <h1>AGELESS CONNECTIONS</h1>
+  </div>
+
+  </span>
+    
+    <div class="image-container">
+
+        <a href="#"><img src="https://images.unsplash.com/photo-1504004030892-d06adf9ffbcf?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="No Internet" style="height: 500px; width: 600px;"></a>
+        <a href="#"><img src="https://images.unsplash.com/photo-1532374876708-35a5580482a9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTZ8fHxlbnwwfHx8fHw%3D" alt="No Internet" style="height: 500px;" width="500px"></a>
+        <a href="#"><img src="https://images.unsplash.com/photo-1567067974934-75a3e4534c14?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MzJ8fHxlbnwwfHx8fHw%3D" alt="No Internet" style="height: 500px;" width="500px"></a>
+    </div>
+    <div class="text-container" style="font-size: 25px;">
+      <p>
+      Supporting elderly people is a crucial aspect of building a compassionate and inclusive society. The meaning and importance of supporting the elderly can be viewed from various perspectives:
+        <br>
+        <br>
+      <b>1.Respect for Wisdom and Experience:</b>
+      Elderly individuals often possess a wealth of knowledge, experience, and wisdom accumulated over their lifetimes. Supporting them means recognizing and respecting this valuable resource.
+      <br>
+      <br>
+
+      <b>2.Preservation of Culture and Traditions:</b>
+      Older individuals often carry the cultural heritage and traditions of a society. By providing support, we contribute to the preservation of these cultural elements, passing them on to future generations.
+      <br>
+      <br>
+      <b>3.Quality of Life:</b>
+      Ensuring the well-being of the elderly improves their overall quality of life. This involves access to healthcare, social activities, and a safe and comfortable living environment.
+      
+      <br>
+      <br>
+      <b>4.Emotional and Social Well-being:</b>
+      Loneliness and isolation can be significant challenges for the elderly. Support means fostering social connections, providing companionship, and addressing mental health concerns to enhance emotional well-being.
+      <br>
+      <br>
+     
+     <b>5.Healthcare and Accessibility:</b>
+      Access to affordable and comprehensive healthcare is crucial for the elderly. Support involves making healthcare services accessible, addressing specific age-related health concerns, and promoting a healthy lifestyle.
+      
+      <br>
+      <br>
+      <b>6.Financial Security:</b>
+      Many elderly individuals may face financial challenges, especially in retirement. Support includes ensuring access to pensions, social security, and other financial assistance programs to help them maintain a decent standard of living.
+      
+      <br>
+      <br>
+      <b>7.Elder Abuse Prevention:</b>
+      Supporting the elderly also involves safeguarding them from abuse, neglect, and exploitation. This requires awareness, advocacy, and legal measures to protect their rights.
+      <br>
+      <br>
+      
+      <b>8.Adaptations for Aging:</b>
+      Creating an age-friendly environment involves adapting infrastructure, transportation, and public spaces to accommodate the needs of older individuals, promoting independence and autonomy.
+      <br>
+      <br>
+      <b>9.Family and Intergenerational Bonds:</b>
+      Support extends to fostering positive relationships between generations, recognizing the importance of family bonds, and encouraging intergenerational activities and understanding.
+      
+      <br>
+      <br>
+      <b>10.Dignity and Autonomy:</b>
+      Every individual, regardless of age, deserves to be treated with dignity and respect. Supporting the elderly means promoting their autonomy, allowing them to make choices about their lives, and involving them in decisions that affect them.
+      <br>
+      <br>
+      In summary, supporting elderly people is a holistic approach that encompasses physical, emotional, social, and cultural well-being. It reflects a commitment to creating a society where individuals of all ages are valued and have the opportunity to lead fulfilling lives.
+      </p>
+    </div>
+    <div class="end">
+        <hr>
+        <h3>Follow us on our socials:</h3>
+        <p>
+            Follow us ageless connection on social media platforms for daily updates
+        </p>
+       
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-google"></a>
+        <a href="#" class="fa fa-linkedin"></a>
+        <a href="#" class="fa fa-youtube"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <h3>GET IN TOUCH</h3>
+        <p>Do you have any queries or comments about our website, our products or any of our services? Feel free to provide solutions using our socials</p>
+    </div>
+
+</body>
+
+<script>
+
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+ 
+  window.onclick = function(e) {
+    if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+    }
+  }
+  </script>
+</html>

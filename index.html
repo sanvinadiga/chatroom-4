@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Time Messaging</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #container {
+      width: 400px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 0;
+      color: #333;
+    }
+
+    #messages {
+      height: 200px;
+      overflow-y: auto;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    #messageBox {
+      width: calc(100% - 20px);
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    #send {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #send:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Real Time Chat Room</h1>
+    <pre id="messages"></pre>
+    <input type="text" id="messageBox" placeholder="Type your message here" />
+    <button id="send" title="Send Message!">Send Message</button>
+  </div>
+
+  <script>
+    (function() {
+      const sendBtn = document.querySelector('#send');
+      const messages = document.querySelector('#messages');
+      const messageBox = document.querySelector('#messageBox');
+
+      let ws;
+
+      function showMessage(message) {
+        if (message instanceof Blob) {
+          const reader = new FileReader();
+          reader.onload = function() {
+            messages.textContent += `\n\n${reader.result}`;
+            messages.scrollTop = messages.scrollHeight;
+            messageBox.value = '';
+          };
+          reader.readAsText(message);
+        } else {
+          messages.textContent += `\n\n${message}`;
+          messages.scrollTop = messages.scrollHeight;
+          messageBox.value = '';
+        }
+      }
+
+      function init() {
+        if (ws) {
+          ws.onerror = ws.onopen = ws.onclose = null;
+          ws.close();
+        }
+
+        ws = new WebSocket('ws://localhost:6969');
+        ws.onopen = () => {
+          console.log('Connection opened!');
+        }
+        ws.onmessage = ({ data }) => showMessage(data);
+        ws.onclose = function() {
+          ws = null;
+        }
+      }
+
+      sendBtn.onclick = function() {
+        if (!ws) {
+          showMessage("No WebSocket connection :(");
+          return ;
+        }
+
+        ws.send(messageBox.value);
+        showMessage(messageBox.value);
+      }
+
+      init();
+    })();
+  </script>
+</body>
+</html>
+
+
+

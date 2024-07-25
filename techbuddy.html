@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Buddy Program</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-section {
+    margin-top: 50px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 1000px;
+    
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 400px;
+}
+
+.content-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-content h3 {
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    margin-bottom: 5px;
+}
+
+</style>
+<body>
+
+    <header>
+        <h1>Tech Buddy Program</h1>
+        <p>Connecting mentors with learners to explore technology together</p>
+    </header>
+
+    <main>
+        <section class="video-section">
+            <div class="video-wrapper">
+                <!-- Replace the video URL with your actual video -->
+                <iframe  src="https://www.youtube.com/embed/zdCftDJwIpI?si=cvUetYrWgppHxbKv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>About the Program</h2>
+            <p>The Tech Buddy Program aims to bridge the gap between experienced professionals and individuals eager to learn about technology. Through mentorship and hands-on projects, participants gain valuable skills and insights.</p>
+            <a href="#contact" class="cta-btn">Get Involved</a>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h3>Contact Us</h3>
+            <p>If you have any questions or would like to join the program, reach out to us:</p>
+            <p>Email: info@techbuddyprogram.com</p>
+            <p>Phone: 123-456-7890</p>
+        </div>
+    </footer>
+
+</body>
+</html>
